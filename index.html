@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Crush Quiz</title>
+    <style>
+        body {
+            background-color: red;
+        }
+        input[type="radio"] {
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+    <h1>QUESTIONS ::</h1>
+
+    <form id="quizForm">
+        <h3>Question 3: Who is the cutest and most intelligent  girl of Hirakud?</h3>
+        <input type="radio" name="q1" value="a"> (a) Sania<br>
+        <input type="radio" name="q1" value="b"> (b) Nora Fatehi<br>
+        <input type="radio" name="q1" value="c"> (c) Urfi Javed<br>
+        <input type="radio" name="q1" value="d"> (d) katrina kaif<br>
+        <br>
+        <input type="submit" value="Submit">
+    </form>
+
+    <div id="result"></div>
+
+    <script>
+        document.getElementById('quizForm').onsubmit = function(event) {
+            event.preventDefault();
+            var selectedOption = document.querySelector('input[name="q1"]:checked');
+            var resultDiv = document.getElementById('result');
+            
+            if (selectedOption) {
+                var result = selectedOption.value;
+                if (result === "a") {
+                    resultDiv.innerHTML = "Well done! <a href='https://technicalaman123.github.io/I_am_your.github.io/'>next page</a>";
+                } else {
+                    resultDiv.innerHTML = "Wrong Answer!";
+                }
+            } else {
+                resultDiv.innerHTML = "Please select an option.";
+            }
+        };
+    </script>
+</body>
+</html>
